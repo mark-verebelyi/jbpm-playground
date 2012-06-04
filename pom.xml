@@ -8,6 +8,48 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>JBPM Playground</name>
+	
+	
+	<properties>
+		<spring.version>3.1.1.RELEASE</spring.version>
+		<slf4j.version>1.6.4</slf4j.version>
+		<logback.version>1.0.3</logback.version>
+		<junit.version>4.10</junit.version>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>	
+	</dependencyManagement>
+	
+	<dependencies></dependencies>
 
 	<build>
 		<pluginManagement>
