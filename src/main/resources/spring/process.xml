@@ -9,11 +9,11 @@
 	<drools-spring:kbase id="kbase">
 		<drools-spring:resources>
 			<drools-spring:resource type="BPMN2" 
-				source="classpath:/process/my-first-bpmn2-process.bpmn" />
+				source="classpath:process/my-first-bpmn2-process.bpmn" />
 		</drools-spring:resources>
 	</drools-spring:kbase>
 
-	<drools-spring:ksession kbase="kbase" type="stateless"
+	<drools-spring:ksession kbase="kbase" type="stateful"
 		id="ksession" />
 
 </beans>
