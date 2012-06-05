@@ -10,6 +10,7 @@
 		<config>src/main/resources/spring/application.xml</config>
 		<config>src/main/resources/spring/integration.xml</config>
 		<config>src/main/resources/spring/service.xml</config>
+		<config>src/main/resources/spring/process.xml</config>
 	</configs>
 	<configSets>
 	</configSets>

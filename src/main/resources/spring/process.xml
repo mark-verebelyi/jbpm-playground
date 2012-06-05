@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:drools-spring="http://drools.org/schema/drools-spring"
+	xsi:schemaLocation="http://drools.org/schema/drools-spring http://drools.org/schema/drools-spring-1.5.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<drools-spring:kbase id="kbase">
+		<drools-spring:resources>
+			<drools-spring:resource type="BPMN2" 
+				source="classpath:/process/my-first-bpmn2-process.bpmn" />
+		</drools-spring:resources>
+	</drools-spring:kbase>
+
+	<drools-spring:ksession kbase="kbase" type="stateless"
+		id="ksession" />
+
+</beans>
