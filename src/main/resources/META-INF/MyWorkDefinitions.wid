@@ -1,0 +1,14 @@
+import org.drools.process.core.datatype.impl.type.StringDataType;
+[
+  [
+    "name" : "Notification",
+    "parameters" : [
+      "Message" : new StringDataType(),
+      "From" : new StringDataType(),
+      "To" : new StringDataType(),
+      "Priority" : new StringDataType(),
+    ],
+    "displayName" : "Notification",
+    "icon" : "images/notification.png"
+  ]
+]

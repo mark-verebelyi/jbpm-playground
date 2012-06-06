@@ -20,7 +20,7 @@ public class JbpmTest {
 
 	@Test
 	public void Hello_World_Process() {
-		ksession.startProcess("com.sample.bpmn");
+		this.ksession.startProcess("com.sample.bpmn");
 	}
 
 }

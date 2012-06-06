@@ -8,12 +8,23 @@
 
 	<drools-spring:kbase id="kbase">
 		<drools-spring:resources>
-			<drools-spring:resource type="BPMN2" 
+			<drools-spring:resource type="BPMN2"
 				source="classpath:process/my-first-bpmn2-process.bpmn" />
 		</drools-spring:resources>
 	</drools-spring:kbase>
 
-	<drools-spring:ksession kbase="kbase" type="stateful"
-		id="ksession" />
+	<drools-spring:ksession kbase="kbase" type="stateful" id="ksession">
+		<drools-spring:configuration>
+			<drools-spring:work-item-handlers>
+				<drools-spring:work-item-handler name="Notification" ref="notificationWorkItemHandler"/>
+			</drools-spring:work-item-handlers>
+		</drools-spring:configuration>
+	</drools-spring:ksession>
+	
+	<bean id="notificationWorkItemHandler" class="playground.jbpm.workitemhandler.NotificationWorkItemHandler">
+		<property name="helloService">
+			<bean class="playground.jbpm.HelloService"/>
+		</property>
+	</bean>
 
 </beans>
