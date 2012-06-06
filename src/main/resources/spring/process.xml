@@ -13,17 +13,24 @@
 		</drools-spring:resources>
 	</drools-spring:kbase>
 
-	<drools-spring:ksession kbase="kbase" type="stateful" id="ksession">
+	<drools-spring:ksession kbase="kbase" type="stateful"
+		id="ksession">
 		<drools-spring:configuration>
+			<drools-spring:jpa-persistence>
+				<drools-spring:transaction-manager ref="transactionManager"/>
+				<drools-spring:entity-manager-factory ref="entityManagerFactory"/>
+			</drools-spring:jpa-persistence>
 			<drools-spring:work-item-handlers>
-				<drools-spring:work-item-handler name="Notification" ref="notificationWorkItemHandler"/>
+				<drools-spring:work-item-handler
+					name="Notification" ref="notificationWorkItemHandler" />
 			</drools-spring:work-item-handlers>
 		</drools-spring:configuration>
 	</drools-spring:ksession>
-	
-	<bean id="notificationWorkItemHandler" class="playground.jbpm.workitemhandler.NotificationWorkItemHandler">
+
+	<bean id="notificationWorkItemHandler"
+		class="playground.jbpm.workitemhandler.NotificationWorkItemHandler">
 		<property name="helloService">
-			<bean class="playground.jbpm.HelloService"/>
+			<bean class="playground.jbpm.HelloService" />
 		</property>
 	</bean>
 

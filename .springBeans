@@ -11,7 +11,23 @@
 		<config>src/main/resources/spring/integration.xml</config>
 		<config>src/main/resources/spring/service.xml</config>
 		<config>src/main/resources/spring/process.xml</config>
+		<config>src/main/resources/spring/db.xml</config>
+		<config>src/main/resources/spring/orm.xml</config>
 	</configs>
 	<configSets>
+		<configSet>
+			<name><![CDATA[application]]></name>
+			<allowBeanDefinitionOverriding>true</allowBeanDefinitionOverriding>
+			<incomplete>false</incomplete>
+			<configs>
+				<config>src/main/resources/spring/db.xml</config>
+				<config>src/main/resources/spring/integration.xml</config>
+				<config>src/main/resources/spring/orm.xml</config>
+				<config>src/main/resources/spring/process.xml</config>
+				<config>src/main/resources/spring/service.xml</config>
+			</configs>
+			<profiles>
+			</profiles>
+		</configSet>
 	</configSets>
 </beansProjectDescription>
